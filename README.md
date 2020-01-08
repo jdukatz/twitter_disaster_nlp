@@ -1,2 +1,4 @@
 # twitter_disaster_nlp
-Small solution to the kaggle natural disaster twitter competition
+Quick and easy solution to the "[Real or not? NLP with Disaster Tweets](https://www.kaggle.com/c/nlp-getting-started)" kaggle competition
+
+The objective of this competition is to classify whether tweets are actually about natural disasters or if they are simply using figurative language. Since BERT was developed specifically to be good at capturing semantic differences in language based solely on context, e.g. "bank vault" vs. "river bank," it's a really good place to start on this competition. This approach uses the BERT uncased large model to generate an embedding for each tweet, then uses that as an input to a bidirectional LSTM layer. I'm not training the BERT layers right now because it would increase training time a lot, and I doubt it would give a lot of benefit since the training set is so small compared to the data BERT was initially trained on. A quick run of this notebook already gives an F1 score of .79 on the test set, so it definitely works very well as a baseline.
